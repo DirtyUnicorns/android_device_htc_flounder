@@ -234,6 +234,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     sound_trigger.primary.flounder
 
+# Since Flounder cannot use DSP - disable it from building
+FLOUNDER_NO_DSP := true
+
 # for keyboard key mappings
 PRODUCT_PACKAGES += \
 	VolantisKeyboard
