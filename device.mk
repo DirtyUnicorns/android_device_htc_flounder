@@ -150,7 +150,7 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 PRODUCT_CHARACTERISTICS := tablet,nosdcard
 
-ifneq ($(filter volantis volantisf, $(TARGET_PRODUCT)),)
+ifneq ($(filter flounder flounder64, $(TARGET_PRODUCT)),)
 # Wifi-Only overlays.
 DEVICE_PACKAGE_OVERLAYS := \
     $(LOCAL_PATH)/wifi_only_overlay \
@@ -207,8 +207,8 @@ $(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-he
 
 # set default USB configuration
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp \
-    ro.adb.secure=1
+    persist.sys.usb.config=mtp,adb \
+    ro.adb.secure=0
 
 # for off charging mode
 PRODUCT_PACKAGES += \
@@ -235,7 +235,7 @@ FLOUNDER_NO_DSP := true
 
 # for keyboard key mappings
 PRODUCT_PACKAGES += \
-	VolantisKeyboard
+    VolantisKeyboard
 
 # for launcher layout
 PRODUCT_PACKAGES += \
