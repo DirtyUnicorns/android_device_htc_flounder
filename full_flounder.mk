@@ -1,4 +1,4 @@
-# Copyright (C) 2014 The Android Open Source Project
+# Copyright (C) 2013 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,22 +21,21 @@
 # lines, aosp and flounder, hence its name.
 #
 
-# Live Wallpapers
+# Launcher3 build
 PRODUCT_PACKAGES += \
-        LiveWallpapers \
-        LiveWallpapersPicker \
-        MagicSmokeWallpapers \
-        VisualizationWallpapers \
-        librs_jni \
-        rild
+        Launcher3
+
+PRODUCT_PROPERTY_OVERRIDES += \
+        net.dns1=8.8.8.8 \
+        net.dns2=8.8.4.4
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, device/htc/flounder/product_64_only.mk)
+$(call inherit-product, device/htc/flounder/product.mk)
+$(call inherit-product, device/htc/flounder/device-lte.mk)
+$(call inherit-product-if-exists, vendor/htc/flounder_lte/device-vendor.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
-PRODUCT_NAME := aosp_flounder_64_only
 PRODUCT_DEVICE := flounder
-PRODUCT_BRAND := Android
-PRODUCT_MODEL := AOSP on Flounder (64-bit only)
+PRODUCT_BRAND := Google
+PRODUCT_MODEL := Nexus 9
 PRODUCT_MANUFACTURER := HTC
-PRODUCT_RESTRICT_VENDOR_FILES := owner path
