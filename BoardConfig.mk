@@ -120,6 +120,7 @@ ifeq ($(HOST_OS),linux)
 endif
 
 TARGET_RELEASETOOLS_EXTENSIONS := device/htc/flounder
+TARGET_OTA_ASSERT_DEVICE := flounder,volantis
 
 ART_USE_HSPACE_COMPACT=true
 
