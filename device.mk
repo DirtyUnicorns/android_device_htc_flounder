@@ -192,7 +192,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES := \
     wifi.interface=wlan0 \
     ro.opengles.version=196609 \
-    ro.sf.lcd_density=320 \
+    ro.sf.lcd_density=280 \
     ro.hwui.texture_cache_size=72 \
     ro.hwui.layer_cache_size=48 \
     ro.hwui.r_buffer_cache_size=8 \
@@ -241,12 +241,12 @@ PRODUCT_PACKAGES += \
     sound_trigger.primary.flounder
 
 # for keyboard key mappings
-PRODUCT_PACKAGES += \
-    VolantisKeyboard
+#PRODUCT_PACKAGES += \
+#    VolantisKeyboard
 
 # for launcher layout
-PRODUCT_PACKAGES += \
-    VolantisLayout
+#PRODUCT_PACKAGES += \
+#    VolantisLayout
 
 # Allows healthd to boot directly from charger mode rather than initiating a reboot.
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
