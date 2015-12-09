@@ -29,3 +29,9 @@ $(call inherit-product, vendor/du/config/common_full_phone.mk)
 $(call inherit-product, vendor/du/config/nfc_enhanced.mk)
 
 PRODUCT_NAME := du_flounder
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRODUCT_NAME=flounder \
+    BUILD_FINGERPRINT=google/volantis/flounder:6.0.1/MMB29K/2419427:user/release-keys \
+    PRIVATE_BUILD_DESC="flounder-user 6.0.1 MMB29K 2419427 release-keys"
+
