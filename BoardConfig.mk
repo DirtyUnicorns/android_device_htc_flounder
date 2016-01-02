@@ -34,7 +34,7 @@ BUILD_EMULATOR := false
 
 TARGET_NO_BOOTLOADER := true
 
-BOARD_KERNEL_CMDLINE += androidboot.hardware=flounder androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE += androidboot.hardware=flounder
 
 TARGET_NO_RADIOIMAGE := true
 
@@ -132,6 +132,7 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 
 MALLOC_IMPL := dlmalloc
 
+# Enable workaround for slow rom flash
 BOARD_SUPPRESS_SECURE_ERASE := true
 
 # Use the non-open-source parts, if they're present
