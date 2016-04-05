@@ -23,6 +23,7 @@
 
 # Launcher3
 PRODUCT_PACKAGES += \
+        rild \
         CarrierConfig \
         Launcher3
 
