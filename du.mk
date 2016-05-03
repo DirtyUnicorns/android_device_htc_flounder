@@ -32,6 +32,6 @@ PRODUCT_NAME := du_flounder
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=flounder \
-    BUILD_FINGERPRINT=google/volantis/flounder:6.0.1/MOB30D/2704746:user/release-keys \
-    PRIVATE_BUILD_DESC="flounder-user 6.0.1 MOB30D 2704746 release-keys"
+    BUILD_FINGERPRINT=google/volantis/flounder:6.0.1/MOB30G/2723637:user/release-keys \
+    PRIVATE_BUILD_DESC="flounder-user 6.0.1 MOB30G 2723637 release-keys"
 
