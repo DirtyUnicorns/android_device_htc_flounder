@@ -20,16 +20,6 @@ PRODUCT_PACKAGES := \
     wpa_supplicant \
     wpa_supplicant.conf
 
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-ifeq ($(USE_SVELTE_KERNEL), true)
-LOCAL_KERNEL := device/htc/flounder_svelte-kernel/Image.gz-dtb
-else
-LOCAL_KERNEL := device/htc/flounder-kernel/Image.gz-dtb
-endif # USE_SVELTE_KERNEL
-else
-LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
-
 BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
 
 # This ensures the needed build tools are available.
@@ -40,11 +30,9 @@ endif
 
 LOCAL_FSTAB := $(LOCAL_PATH)/fstab.flounder
 
-
 TARGET_RECOVERY_FSTAB = $(LOCAL_FSTAB)
 
 PRODUCT_COPY_FILES := \
-    $(LOCAL_KERNEL):kernel \
     $(LOCAL_PATH)/init.flounder.rc:root/init.flounder.rc \
     $(LOCAL_PATH)/init.flounder.usb.rc:root/init.flounder.usb.rc \
     $(LOCAL_PATH)/init.recovery.flounder.rc:root/init.recovery.flounder.rc \
@@ -159,7 +147,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/qct/lib64_vendor/libmdmdetect.so:vendor/lib64/libmdmdetect.so \
     $(LOCAL_PATH)/gps/qct/lib64_vendor/libperipheral_client.so:vendor/lib64/libperipheral_client.so
 
-
 # NFC feature + config files
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
@@ -172,7 +159,7 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 PRODUCT_CHARACTERISTICS := tablet,nosdcard
 
-ifneq ($(filter volantis volantisf, $(TARGET_PRODUCT)),)
+ifneq ($(filter flounder flounder64, $(TARGET_PRODUCT)),)
 # Wifi-Only overlays.
 DEVICE_PACKAGE_OVERLAYS := \
     $(LOCAL_PATH)/wifi_only_overlay \
@@ -226,6 +213,13 @@ PRODUCT_PROPERTY_OVERRIDES := \
 # setup dalvik vm configs.
 $(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
 
+# set default USB configuration
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    sys.usb.config=mtp,adb \
+    persist.sys.usb.config=mtp,adb \
+    ro.adb.secure=0 \
+    ro.du.updater=flounder
+
 # for off charging mode
 PRODUCT_PACKAGES += \
     charger \
@@ -248,7 +242,7 @@ PRODUCT_PACKAGES += \
 
 # for keyboard key mappings
 PRODUCT_PACKAGES += \
-	VolantisKeyboard
+    VolantisKeyboard
 
 # for launcher layout
 PRODUCT_PACKAGES += \
