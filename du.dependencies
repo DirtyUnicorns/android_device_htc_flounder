@@ -1,0 +1,12 @@
+[
+ {
+   "repository":   "DirtyUnicorns/android_kernel_htc_flounder",
+   "target_path":  "kernel/htc/flounder",
+   "branch":       "n"
+ },
+ {
+   "repository":  "DirtyUnicorns/android_vendor_htc",
+   "target_path": "vendor/htc",
+   "branch":      "n"
+ }
+]
