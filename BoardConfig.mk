@@ -16,6 +16,7 @@
 
 # Build a separate vendor.img
 TARGET_COPY_OUT_VENDOR := vendor
+BOARD_NEEDS_VENDORIMAGE_SYMLINK := true
 
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
