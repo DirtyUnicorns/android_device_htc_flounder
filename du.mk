@@ -36,5 +36,5 @@ PRODUCT_MANUFACTURER := HTC
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=flounder \
-    BUILD_FINGERPRINT=google/volantis/flounder:7.1.1/NMF26F/3425388:user/release-keys \
-    PRIVATE_BUILD_DESC="flounder-user 7.1.1 NMF26F 3425388 release-keys"
+    BUILD_FINGERPRINT=google/volantis/flounder:7.1.1/N4F26M/3562722:user/release-keys \
+    PRIVATE_BUILD_DESC="flounder-user 7.1.1 N4F26M 3562722 release-keys"
