@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2013-2016 The Android Open Source Project
+# Copyright (C) 2013-2017 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -36,5 +36,5 @@ PRODUCT_MANUFACTURER := HTC
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=flounder \
-    BUILD_FINGERPRINT=google/volantis/flounder:7.1.1/N4F26Q/3623443:user/release-keys \
-    PRIVATE_BUILD_DESC="flounder-user 7.1.1 N4F26Q 3623443 release-keys"
+    BUILD_FINGERPRINT=google/volantis/flounder:7.1.1/N4F26T/3687331:user/release-keys \
+    PRIVATE_BUILD_DESC="flounder-user 7.1.1 N4F26T 3687331 release-keys"
